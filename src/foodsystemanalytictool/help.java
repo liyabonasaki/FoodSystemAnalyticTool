@@ -15,7 +15,8 @@ public class help {
             String url = link;
             java.awt.Desktop.getDesktop().browse(java.net.URI.create(url));
          } catch (java.io.IOException e) {
-            System.out.println(e.getMessage());
+            e.getStackTrace();
+            
         }
        
     }
