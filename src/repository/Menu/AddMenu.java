@@ -14,12 +14,12 @@ import javax.swing.JOptionPane;
  *
  * @author Liyabona Saki
  */
-public class manageMenu extends javax.swing.JFrame {
+public class AddMenu extends javax.swing.JFrame {
 
     Connection connection = null;
     PreparedStatement prp = null;
 
-    public manageMenu() {
+    public AddMenu() {
         initComponents();
 //        ImageIcon ic = new ImageIcon(getClass().getResource("/Images/hospital.png"));
 //        this.setIconImage(ic.getImage());
@@ -53,12 +53,12 @@ public class manageMenu extends javax.swing.JFrame {
         jPanel2.setPreferredSize(new java.awt.Dimension(1260, 583));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel6.setBackground(new java.awt.Color(51, 0, 51));
+        jPanel6.setBackground(new java.awt.Color(37, 240, 105));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel13.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("ADD NEW MENU");
+        jLabel13.setText("Add New Menu");
         jPanel6.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(534, 27, 191, 51));
 
         jPanel2.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 100));
@@ -111,7 +111,7 @@ public class manageMenu extends javax.swing.JFrame {
         jLabel14.setText("Price");
         jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 290, 140, 40));
 
-        jPanel7.setBackground(new java.awt.Color(51, 0, 51));
+        jPanel7.setBackground(new java.awt.Color(37, 240, 105));
 
         addDctorbtn.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         addDctorbtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -172,14 +172,13 @@ public class manageMenu extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 1200, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1200, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 528, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 541, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 9, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -8, -1, 550));
@@ -189,8 +188,8 @@ public class manageMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void clearPbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearPbtnMouseClicked
-        Menu menu = new Menu();
-        menu.setVisible(rootPaneCheckingEnabled);
+        ManageFoodMenu mfm = new ManageFoodMenu();
+        mfm.setVisible(rootPaneCheckingEnabled);
         this.dispose();
 
     }//GEN-LAST:event_clearPbtnMouseClicked
@@ -236,7 +235,7 @@ public class manageMenu extends javax.swing.JFrame {
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(() -> {
-            new manageMenu().setVisible(true);
+            new AddMenu().setVisible(true);
         });
     }
 

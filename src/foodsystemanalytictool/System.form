@@ -41,16 +41,11 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="214" max="-2" attributes="0"/>
-                          <Component id="jSeparator1" min="-2" pref="485" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="225" max="-2" attributes="0"/>
-                          <Component id="jLabel1" min="-2" pref="543" max="-2" attributes="0"/>
-                      </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="225" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="jSeparator1" min="-2" pref="485" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" pref="543" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="202" max="32767" attributes="0"/>
               </Group>
@@ -61,9 +56,9 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" pref="76" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jSeparator1" min="-2" pref="12" max="-2" attributes="0"/>
-                  <EmptySpace pref="26" max="32767" attributes="0"/>
+                  <EmptySpace pref="21" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -77,7 +72,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="        About FoodSystemAnalyticTool"/>
+            <Property name="text" type="java.lang.String" value="                     Managing the System"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JSeparator" name="jSeparator1">
@@ -90,7 +85,7 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="0" y="150" width="970" height="400"/>
+          <AbsoluteConstraints x="0" y="140" width="970" height="400"/>
         </Constraint>
       </Constraints>
 
@@ -98,12 +93,13 @@
       <SubComponents>
         <Component class="javax.swing.JTextArea" name="jTextArea1">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="columns" type="int" value="20"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="14" style="0"/>
+              <Font name="Arial" size="18" style="0"/>
             </Property>
             <Property name="rows" type="int" value="5"/>
-            <Property name="text" type="java.lang.String" value="Food System Analytic Tool&#xa;&#xa;Developer: &#x9;Liyabona Saki, Kanya Ramncwana&#xa;Email : &#x9;217120830@mycput.ac.za&#xa;Year : 2021&#xa;&#xa;&#xa;&#xa;&#xa;About the system&#xa;-----------------------------&#xa;&#xa;The Food Systems Dashboard is a new tool that aims to describe global, regional and national food systems; to assess the challenges for improving diets, &#xa;nutrition and health; and to guide its users to set priorities and decide on actions. &#xa;&#xa;The Food Systems Dashboard brings together extant data from public and private sources to help decision makers understand their food systems, &#xa;identify their levers of change and decide which ones need to be pulled&#xa;&#xa;Food systems are the sum of actors and interactions along the food value chain&#x2014;from input supply and production of crops, &#xa;livestock, fish, and other agricultural commodities to transportation, processing, retailing, wholesaling, and preparation of foods to consumption and disposal."/>
+            <Property name="text" type="java.lang.String" value="System version: 1.0&#xa;&#xa;Features to be implemented:&#xa;&#xa;1)Changing theme&#xa;2)Fixing the report feature&#xa;3)Integrating to other systems&#xa;3)sending automated emails&#xa;4)Tracking feature"/>
           </Properties>
         </Component>
       </SubComponents>

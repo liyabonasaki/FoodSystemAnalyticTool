@@ -6,6 +6,7 @@ import foodsystemanalytictool.Menu;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.Set;
 
 import javax.swing.JOptionPane;
 
@@ -22,6 +23,14 @@ public class AddOrder extends javax.swing.JFrame {
         initComponents();
 //        ImageIcon ic = new ImageIcon(getClass().getResource("/Images/hospital.png"));
 //        this.setIconImage(ic.getImage());
+    }
+    
+    private void clear(){
+        this.dIdField.setText(null);
+        this.dNameField.setText(null);
+        this.clientName.setText(null);
+        this.dAddressField.setText(null);
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -55,7 +64,7 @@ public class AddOrder extends javax.swing.JFrame {
         jPanel2.setPreferredSize(new java.awt.Dimension(1260, 583));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel6.setBackground(new java.awt.Color(51, 0, 51));
+        jPanel6.setBackground(new java.awt.Color(240, 97, 37));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel13.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
@@ -113,11 +122,11 @@ public class AddOrder extends javax.swing.JFrame {
         jLabel14.setText("Client Name");
         jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 290, 140, -1));
 
-        jPanel7.setBackground(new java.awt.Color(51, 0, 51));
+        jPanel7.setBackground(new java.awt.Color(240, 97, 37));
 
         addDctorbtn.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         addDctorbtn.setForeground(new java.awt.Color(255, 255, 255));
-        addDctorbtn.setText("Add");
+        addDctorbtn.setText("    Add");
         addDctorbtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 addDctorbtnMouseClicked(evt);
@@ -128,17 +137,11 @@ public class AddOrder extends javax.swing.JFrame {
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(addDctorbtn)
-                .addContainerGap(34, Short.MAX_VALUE))
+            .addComponent(addDctorbtn, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(addDctorbtn, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(addDctorbtn, javax.swing.GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE)
         );
 
         jPanel2.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 430, -1, -1));
@@ -148,7 +151,7 @@ public class AddOrder extends javax.swing.JFrame {
 
         clearPbtn.setFont(new java.awt.Font("Arial", 0, 23)); // NOI18N
         clearPbtn.setForeground(new java.awt.Color(255, 255, 255));
-        clearPbtn.setText("Back");
+        clearPbtn.setText("   Back");
         clearPbtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 clearPbtnMouseClicked(evt);
@@ -159,22 +162,16 @@ public class AddOrder extends javax.swing.JFrame {
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(clearPbtn, javax.swing.GroupLayout.DEFAULT_SIZE, 76, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(clearPbtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(clearPbtn, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(clearPbtn, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
         );
 
         jPanel2.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 430, -1, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1210, 550));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1210, 530));
 
         pack();
         setLocationRelativeTo(null);
@@ -213,6 +210,7 @@ public class AddOrder extends javax.swing.JFrame {
                 prp.setString(4,client_name);
                 prp.execute();
                 JOptionPane.showMessageDialog(null, "Data Saved");
+                this.clear(); //clear fields
             } catch (SQLException e) {
                 JOptionPane.showMessageDialog(null, e);
             }
@@ -220,8 +218,8 @@ public class AddOrder extends javax.swing.JFrame {
     }//GEN-LAST:event_addDctorbtnMouseClicked
 
     private void clearPbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearPbtnMouseClicked
-        Menu menu = new Menu();
-        menu.setVisible(rootPaneCheckingEnabled);
+        ManageOrders mo = new ManageOrders();
+        mo.setVisible(rootPaneCheckingEnabled);
         this.dispose();
      
     }//GEN-LAST:event_clearPbtnMouseClicked

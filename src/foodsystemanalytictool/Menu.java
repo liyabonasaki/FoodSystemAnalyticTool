@@ -8,8 +8,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import repository.Menu.manageMenu;
+import repository.Menu.ManageFoodMenu;
+import repository.Menu.AddMenu;
 import repository.Orders.AddOrder;
+import repository.Orders.ManageOrders;
 
 /**
  *
@@ -36,11 +38,8 @@ public class Menu extends javax.swing.JFrame {
    
     
     String username;
-//    String user = dUserField.getText();
-//   String user = loggedUser.userName;
-   
-    
-    
+
+        
     public Menu() {
         initComponents();
         initializeOrders();
@@ -120,12 +119,22 @@ public class Menu extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_services_30px.png"))); // NOI18N
         jLabel3.setText("       System");
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 341, 279, 66));
 
         jLabel5.setBackground(new java.awt.Color(255, 153, 153));
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel5.setIcon(new javax.swing.ImageIcon("D:\\Users\\Liyabona Saki\\Documents\\NetBeansProjects\\FoodSystemAnalyticTool\\src\\icons\\icons8_help_32px.png")); // NOI18N
         jLabel5.setText("        Help");
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 425, 279, 55));
 
         jLabel6.setBackground(new java.awt.Color(255, 153, 153));
@@ -268,9 +277,11 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        AddOrder addorder = new AddOrder();
-        addorder.setVisible(rootPaneCheckingEnabled);
+        ManageOrders mo = new ManageOrders();
+        mo.setVisible(rootPaneCheckingEnabled);
+        this.setLocationRelativeTo(jMenu1);
         this.dispose();
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jLabel6KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jLabel6KeyPressed
@@ -292,10 +303,10 @@ public class Menu extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        manageMenu mm = new manageMenu();
-        mm.setVisible(rootPaneCheckingEnabled);
-        this.dispose();
-        this.setLocationRelativeTo(mm);
+          ManageFoodMenu mfm = new ManageFoodMenu();
+          mfm.setVisible(rootPaneCheckingEnabled);
+          this.dispose();
+          this.setLocationRelativeTo(jMenu1);
         
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -303,6 +314,17 @@ public class Menu extends javax.swing.JFrame {
 //      loggedUser.loginUser();
        jLabel4.setText(loggedUser.userName);
     }//GEN-LAST:event_jLabel4AncestorAdded
+
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+       help.openAutomatedLink();
+    }//GEN-LAST:event_jLabel5MouseClicked
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        System sys = new System();
+        sys.setVisible(rootPaneCheckingEnabled);
+        this.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_jLabel3MouseClicked
 
     /**
      * @param args the command line arguments
